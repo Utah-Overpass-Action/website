@@ -212,6 +212,74 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
     
+    /* Events Section Styles */
+    .events-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .event-card {
+      display: flex;
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    
+    .event-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 100px;
+      background-color: var(--crimson);
+      color: var(--white);
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .event-date .day {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+    
+    .event-date .month {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    
+    .event-details {
+      padding: 1rem 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .event-details h3 {
+      color: var(--navy-blue);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .event-location, .event-time {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+    
+    .event-description {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    
     /* Mobile Responsive Styles */
     @media (max-width: 768px) {
       .nav-toggle {
@@ -251,6 +319,22 @@
       .section-title h2 {
         font-size: 1.8rem;
       }
+      .event-card {
+        flex-direction: column;
+      }
+      .event-date {
+        flex-direction: row;
+        padding: 0.5rem;
+        justify-content: center;
+        width: 100%;
+      }
+      .event-date .day {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+      .event-date .month {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -262,6 +346,7 @@
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
+          <li><a href="#events">Events</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#initiatives">Initiatives</a></li>
           <li><a href="#join">Join Us</a></li>
@@ -272,10 +357,56 @@
 
   <div class="hero" id="home">
     <h1>Utah Overpass Action</h1>
-    <p>Working together for positive change across the Beehive State</p>
+    <p>Working together for positive change across the Beehive State. This is a demo website, all content is made up.</p>
     <a href="#join" class="btn">Get Involved</a>
   </div>
 
+  <section id="events">
+    <div class="section-title">
+      <h2>Upcoming Events</h2>
+    </div>
+    <div class="events-container">
+      <div class="event-card">
+        <div class="event-date">
+          <span class="day">02</span>
+          <span class="month">May</span>
+        </div>
+        <div class="event-details">
+          <h3>Banner Drop - I-15 Overpass</h3>
+          <p class="event-location"><i>Location:</i> 400 South Overpass, Salt Lake City</p>
+          <p class="event-time"><i>Time:</i> 4:30 PM - 6:00 PM</p>
+          <p class="event-description">Join us for our weekly banner drop to raise awareness for positive change in our community.</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-date">
+          <span class="day">07</span>
+          <span class="month">May</span>
+        </div>
+        <div class="event-details">
+          <h3>Community Forum - Housing Justice</h3>
+          <p class="event-location"><i>Location:</i> Salt Lake Community College, South City Campus</p>
+          <p class="event-time"><i>Time:</i> 7:00 PM - 9:00 PM</p>
+          <p class="event-description">A panel discussion about affordable housing solutions for Utah families.</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-date">
+          <span class="day">10</span>
+          <span class="month">May</span>
+        </div>
+        <div class="event-details">
+          <h3>Rally for Climate Action</h3>
+          <p class="event-location"><i>Location:</i> Utah State Capitol, North Lawn</p>
+          <p class="event-time"><i>Time:</i> 12:00 PM - 2:00 PM</p>
+          <p class="event-description">Stand with us to demand meaningful climate policies for Utah's future.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <section id="about">
     <div class="section-title">
       <h2>Our Mission</h2>
@@ -288,7 +419,7 @@
         <p>Our members come from diverse backgrounds but share a common vision: a Utah that works for everyone, not just the few. Through collective action, we can make our voices heard and create the change we wish to see.</p>
       </div>
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1604948501466-4e9c339b9f82?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Utah landscape with mountains and blue sky">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Utah.svg/800px-Flag_of_Utah.svg.png" alt="Utah state flag">
       </div>
     </div>
   </section>
@@ -306,14 +437,14 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1611175140153-bfd26338f2c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Person holding a sign at a peaceful demonstration">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Utah.svg/800px-Flag_of_Utah.svg.png" alt="Utah state flag">
         <div class="card-content">
           <h3>Advocacy & Action</h3>
           <p>Through peaceful demonstrations, letter-writing campaigns, and direct engagement with elected officials, we advocate for policies that reflect our shared values.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1544371876-225abe620d2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="People working together at a community project">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="People working together at a community project">
         <div class="card-content">
           <h3>Education & Information</h3>
           <p>We provide resources and educational opportunities to help community members understand complex issues and make informed decisions about matters that affect all Utahns.</p>
